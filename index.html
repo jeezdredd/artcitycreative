@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Упс! Кажется что-то пошло не так.</title>
+
+	<script src="js/modernizr.js"></script>
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/style.css" />
+
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+</head>
+<body class="color-scheme-neue">
+
+	<canvas id="bg-canvas"></canvas>
+	<div class="bg-img" style="width: 100%; height: 100%; position: fixed; background: url(images/hongkong-bg.jpg) no-repeat center center; background-size: cover; "></div>
+
+	<div class="splash">
+		<div class="centered-unit">
+			<div class="container">
+
+				<h1>Обновляем функции и дизайн!</h1>
+
+				<p class="lead">Оставайтесь в курсе событий, скоро мы возобновим работу!</p>
+				
+
+				<div class="countdown circled large">
+
+					<div class="time days">
+						<div class="value">00</div>
+						<div class="unit">Days</div>
+					</div>
+
+					<div class="time hours">
+						<div class="value">00</div>
+						<div class="unit">Hours</div>
+					</div>
+
+					<div class="time minutes">
+						<div class="value">00</div>
+						<div class="unit">Minutes</div>
+					</div>
+
+					<div class="time seconds">
+						<div class="value">00</div>
+						<div class="unit">Seconds</div>
+					</div>
+				</div>
+
+			</div>	
+		</div>
+	</div>
+	
+	<!-- Second screen -->
+	<div class="overlap">
+	
+
+		<a href="" class="more">Нажми на<i class="fa fa-chevron-down"></i>меня :D</a>
+		
+
+		<div class="container few-words">
+			<div class="row">
+
+				<div class="col col-heading">
+
+					<h2>Кто мы?</h2>
+					
+
+					<div class="social">
+						<a href="" class="social-icon">
+							<i class="fa fa-twitter fa-lg"></i>
+						</a>
+						<a href="" class="social-icon">
+							<i class="fa fa-facebook fa-lg"></i>
+						</a>
+						<a href="" class="social-icon">
+							<i class="fa fa-google-plus fa-lg"></i>
+						</a>
+						<a href="" class="social-icon">
+							<i class="fa fa-instagram fa-lg"></i>
+						</a>
+					</div>
+
+				</div>
+
+				
+
+				<div class="col col-content">
+					<p>С 2012 года мы предоставляем услуги онлайн, для вас. Более 1000 отзывов и кристально чистая репутация, делают нас лидерами в сфере веб-дизайна в Казахстане.</p>
+				</div>
+
+				
+
+				<div class="col col-contacts">
+					<h3>Контакты</h3>
+					<div class="contact">
+						<span class="icon"><i class="fa fa-phone fa-fw"></i></span>
+						<span class="value">+7(771)090-07-53</span>
+					</div>
+					<div class="contact">
+						<span class="icon"><i class="fa fa-envelope-o fa-fw"></i></span>
+						<span class="value"><a href="mailto:artcitycreativealmaty@gmail.com">artcitycreativealmaty@gmail.com</a></span>
+					</div>
+			
+				</div>
+
+			</div>
+		</div>
+
+		
+
+		<div class="notify-by-email">
+			<div class="container">	
+				<div class="row">
+					<div class="col col-one-third">
+						<h3>Хочу быть в &nbsp;курсе!</h3>
+					</div>
+					<div class="col col-two-thirds">
+						<!-- Subscribe form -->
+						<form action="notify-me.php" id="notifyMe" method="POST">
+							<input type="text" name="email" placeholder="Ваш e-mail "/>
+							<button>Отправить</button>
+							<p class="note">Конечно же, мы не будем вам спамить!</p>
+						</form>
+						<!-- Subscribe form end -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Send me an email when it's done block end	 -->
+
+
+		<!-- Footer -->
+		<div class="footer">
+			<div class="container">
+				Art City Creative &copy2012-2020
+			</div>
+		</div>
+		<!-- Footer end -->
+	</div>
+	
+	<!-- JavaScripts -->
+	
+	<script src="js/jquery.js"></script>
+	<script src="js/countdown.js"></script>
+	<script src="js/bezierCanvas.js"></script>
+	<script src="js/notifyMe.js"></script>
+	
+	<script type="text/javascript">
+	$().ready(function(){
+	
+		// Activate countdownTimer plugin on a '.countdown' element
+		$(".countdown").countdownTimer({
+			// Set the end date for the countdown
+			endTime: new Date("April 21, 2015 11:13:00 UTC+0200")
+		});
+		
+		
+		// Activate notifyMe plugin on a '#notifyMe' element	
+		$("#notifyMe").notifyMe();
+		
+			
+		// Activate bezierCanvas plugin on a #bg-canvas element
+		$("#bg-canvas").bezierCanvas({
+			maxStyles: 3,
+			maxLines: 80,
+			strokeWidth: 0.5,
+			lineSpacing: 0.07,
+			spacingVariation: 0.07,
+			colorBase: {r: 100,g: 120,b: 200},
+			colorVariation: {r: 50, g: 50, b: 50},
+			moveCenterX: 0,
+			moveCenterY: 0,
+			delayVariation: 4,
+			globalAlpha: 0.4,
+			globalSpeed:200,
+		});
+		
+		// Add handler on 'Scroll down to learn more' link
+		$().ready(function(){
+			$(".overlap .more").click(function(e){
+				e.preventDefault();
+				$("body,html").animate({scrollTop: $(window).height()});
+			});
+		});		
+
+		
+	});
+	</script>
+
+</body>
+</html>
